@@ -6,11 +6,13 @@ from src.actions_layer.actions import handle_number_actions
 
 def add(first_operand: Union[int, float],
         second_operand: Union[int, float]) -> Union[int, float]:
+
   return handle_number_actions("add", allocate(first_operand, second_operand))()
 
 
 def subtract(first_operand: Union[int, float],
              second_operand: Union[int, float]) -> Union[int, float]:
+
   return handle_number_actions("subtract", allocate(first_operand, second_operand))()
 
 

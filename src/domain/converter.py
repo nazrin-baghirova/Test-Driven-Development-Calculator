@@ -9,7 +9,7 @@ def _convert(value):
     except ValueError:
       final_value = float(value)
     finally:
-      return final_value
+      return final_value if final_value is not None else value
   return value
 
 
