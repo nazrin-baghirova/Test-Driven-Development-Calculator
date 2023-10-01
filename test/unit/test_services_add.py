@@ -1,6 +1,6 @@
 import pytest
-
-from src.calculator import add
+from src.service_layer.services import add
+from src.domain.exceptions import UnsupportedModelTypeException
 
 
 def test_add_two_integers():
@@ -19,13 +19,17 @@ def test_add_float_and_zero():
   assert add(5.5, 0) == 5.5
 
 
+def test_add_negative_int_and_int():
+  assert add(-5, 5) == 0
+
+
 def test_add_int_and_list():
-  with pytest.raises(TypeError):
+  with pytest.raises(UnsupportedModelTypeException):
     assert add(5, [])
 
 
 def test_add_list_and_list():
-  with pytest.raises(TypeError):
+  with pytest.raises(UnsupportedModelTypeException):
     assert add([], [])
 
 
@@ -38,5 +42,5 @@ def test_add_int_and_zero_with_string():
 
 
 def test_add_string_and_int():
-  with pytest.raises(TypeError):
+  with pytest.raises(UnsupportedModelTypeException):
     assert add("Salam", 0)

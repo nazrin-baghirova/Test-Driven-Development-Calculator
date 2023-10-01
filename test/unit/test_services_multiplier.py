@@ -1,6 +1,7 @@
 import pytest
 
-from src.calculator import multiply
+from src.service_layer.services import multiply
+from src.domain.exceptions import UnsupportedModelTypeException
 
 
 def test_multiply_two_integers():
@@ -20,7 +21,7 @@ def test_multiply_float_and_zero():
 
 
 def test_multiply_int_and_list():
-  with pytest.raises(TypeError):
+  with pytest.raises(UnsupportedModelTypeException):
     assert multiply(19, [])
 
 
@@ -37,5 +38,5 @@ def test_multiply_int_and_zero_with_string():
 
 
 def test_multiply_string_and_int():
-  with pytest.raises(TypeError):
+  with pytest.raises(UnsupportedModelTypeException):
     assert multiply("Salam", 2)
