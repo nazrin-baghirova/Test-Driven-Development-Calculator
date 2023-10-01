@@ -13,12 +13,12 @@ def _convert(value):
   return value
 
 
-def convert_types(func_):
+def convert_model_types(func_):
 
   @wraps(func_)
-  def wrapper(num1, num2):
-    converted1 = _convert(num1)
-    converted2 = _convert(num2)
+  def wrapper(first_operand, second_operand):
+    converted1 = _convert(first_operand)
+    converted2 = _convert(second_operand)
     return func_(converted1, converted2)
 
   return wrapper
