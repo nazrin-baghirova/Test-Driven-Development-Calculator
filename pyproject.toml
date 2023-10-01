@@ -1,12 +1,13 @@
 [tool.poetry]
-name = "python-template"
+name = "Calculator"
 version = "0.1.0"
-description = ""
-authors = ["Your Name <you@example.com>"]
+description = "TDD Learning"
+authors = ["Nazrin Baghirova <nazrin.baghirov4@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = ">=3.10.0,<3.11"
 pytest = ">=7.1.2"
+flask = ">=2.1.1"
 
 [tool.pyright]
 # https://github.com/microsoft/pyright/blob/main/docs/configuration.md

@@ -26,3 +26,16 @@ def test_multiply_int_and_list():
 
 def test_multiply_neg_int_and_float():
   assert multiply(-1, 5.5) == -5.5
+
+
+def test_multiply_int_and_float_with_string():
+  assert multiply("2", "5.") == 10.
+
+
+def test_multiply_int_and_zero_with_string():
+  assert multiply("5", "0") == 0
+
+
+def test_multiply_string_and_int():
+  with pytest.raises(TypeError):
+    assert multiply("Salam", 2)

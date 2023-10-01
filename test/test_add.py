@@ -27,3 +27,16 @@ def test_add_int_and_list():
 def test_add_list_and_list():
   with pytest.raises(TypeError):
     assert add([], [])
+
+
+def test_add_int_and_float_with_string():
+  assert add("5", "15.5") == 20.5
+
+
+def test_add_int_and_zero_with_string():
+  assert add("5", "0") == 5
+
+
+def test_add_string_and_int():
+  with pytest.raises(TypeError):
+    assert add("Salam", 0)
